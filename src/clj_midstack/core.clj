@@ -85,7 +85,7 @@
     (if-let [nspace (namespace kw)]
       (if-let [fnvar (ns-resolve (symbol nspace) (symbol (name kw)))]
         (fnvar context)
-        (throw (IllegalArgumentException. (str "Could not find var for keyword frame function" kw))))
+        (throw (IllegalArgumentException. (str "Could not find var for keyword frame function: " kw))))
       (throw (IllegalArgumentException. (str "Keyword frame function " kw " must be fully qualified")))))
   Object
   (call [this _]
